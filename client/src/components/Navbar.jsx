@@ -9,7 +9,11 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="absolute top-[42px] left-1/2 -translate-x-1/2 w-[90%] max-w-[1400px] bg-white rounded-xl px-8 h-[70px] flex items-center justify-between shadow-md z-50">
+      <motion.nav
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+        className="absolute top-[42px] left-1/2 -translate-x-1/2 w-[92%] max-w-[1400px] bg-white rounded-xl px-4 sm:px-8 h-[60px] sm:h-[70px] flex items-center justify-between shadow-md z-50">
         {/* LOGO */}
         <div className="flex items-center gap-3">
           <div className="flex flex-col gap-[3px]">
@@ -17,7 +21,7 @@ export default function Navbar() {
             <div className="w-6 h-[5px] bg-gray-300 rounded" />
             <div className="w-10 h-[5px] bg-green-500 rounded" />
           </div>
-          <h1 className="text-3xl font-bold text-[#1da1f2]">
+          <h1 className="text-xl sm:text-3xl font-bold text-[#1da1f2]">
             Varen <span className="text-[#3d4d5f]">Group</span>
           </h1>
         </div>
@@ -65,7 +69,7 @@ export default function Navbar() {
             className="block w-6 h-[2px] bg-[#222] rounded origin-center"
           />
         </button>
-      </nav>
+      </motion.nav>
 
       {/* MOBILE DRAWER */}
       <AnimatePresence>

@@ -54,7 +54,7 @@ export default function Hero() {
   const next = () => setCurrent((p) => (p + 1) % slides.length);
 
   return (
-    <section className="relative h-[700px] overflow-hidden">
+    <section className="relative h-[580px] sm:h-[700px] overflow-hidden">
       {/* SLIDES */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -72,7 +72,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-[#060f1e]/90 via-[#060f1e]/70 to-transparent" />
 
       {/* CONTENT */}
-      <div className="relative z-10 h-full flex flex-col justify-start pl-16 pr-10 pt-36 max-w-[780px]">
+      <div className="relative z-10 h-full flex flex-col justify-start pl-6 sm:pl-16 pr-6 sm:pr-10 pt-28 sm:pt-36 max-w-[780px]">
         <AnimatePresence mode="wait">
           <motion.div key={current} className="flex flex-col gap-4">
             {/* TAG */}
@@ -94,7 +94,7 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="font-display text-white text-5xl xl:text-6xl font-bold leading-tight whitespace-pre-line"
+              className="font-display text-white text-3xl sm:text-5xl xl:text-6xl font-bold leading-tight whitespace-pre-line"
             >
               {slides[current].heading}{" "}
               <span className="text-[#14aef5]">{slides[current].highlight}</span>
@@ -117,7 +117,7 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="text-white/75 text-base leading-relaxed max-w-[520px]"
+              className="text-white/75 text-sm sm:text-base leading-relaxed max-w-[520px]"
             >
               {slides[current].sub}
             </motion.p>
@@ -167,7 +167,7 @@ export default function Hero() {
       </div>
 
       {/* CONTACT BAR */}
-      <div className="absolute bottom-0 left-0 w-full bg-white/95 backdrop-blur-sm py-5 px-10 flex flex-wrap gap-10 z-20">
+      <div className="absolute bottom-0 left-0 w-full bg-white/95 backdrop-blur-sm py-4 px-6 flex flex-wrap gap-6 z-20">
         <div className="flex items-center gap-3">
           <div className="bg-[#14aef5] p-2.5 rounded-md text-white">
             <Mail size={18} />

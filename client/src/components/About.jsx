@@ -34,10 +34,10 @@ export default function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.5 }}
-            className="absolute right-[-16px] top-1/2 -translate-y-1/2 bg-[#14aef5] text-white w-[130px] h-[130px] rounded-2xl flex flex-col items-center justify-center shadow-xl"
+            className="absolute -right-5 top-1/2 -translate-y-1/2 bg-[#14aef5] text-white w-[110px] h-[110px] rounded-2xl flex flex-col items-center justify-center shadow-xl z-10"
           >
-            <span className="text-4xl font-bold font-display">15+</span>
-            <span className="text-[11px] text-center leading-tight mt-1 font-medium px-3">Years of Experience</span>
+            <span className="text-3xl font-bold font-display">15+</span>
+            <span className="text-[10px] text-center leading-tight mt-1 font-medium px-2">Years of Experience</span>
           </motion.div>
         </motion.div>
 
