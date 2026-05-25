@@ -14,8 +14,8 @@ const col = {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#020d23] text-white pt-16">
-      <div className="max-w-[1450px] mx-auto px-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 pb-16">
+    <footer className="bg-[#020d23] text-white pt-10 sm:pt-16">
+      <div className="max-w-[1450px] mx-auto px-6 sm:px-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 pb-10 sm:pb-16">
 
         {/* BRAND */}
         <motion.div
@@ -33,11 +33,7 @@ export default function Footer() {
             transition={{ duration: 0.6 }}
             className="flex items-center gap-3"
           >
-            <div className="flex flex-col gap-[3px]">
-              <div className="w-8 h-[5px] bg-gray-500 rounded" />
-              <div className="w-6 h-[5px] bg-gray-400 rounded" />
-              <div className="w-10 h-[5px] bg-green-500 rounded" />
-            </div>
+            <img src="/Varen-Group.png" alt="Varen Group" className="h-10 w-auto object-contain" />
             <h2 className="text-2xl font-bold text-[#1da1f2]">
               Varen <span className="text-white">Group</span>
             </h2>
@@ -125,7 +121,7 @@ export default function Footer() {
         transition={{ duration: 0.6 }}
         className="bg-[#14aef5] h-10 flex items-center justify-center text-white text-xs"
       >
-        Varen Group © 2025
+        Varen Group © 2026
       </motion.div>
     </footer>
   );

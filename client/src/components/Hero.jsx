@@ -42,6 +42,7 @@ const imageVariants = {
   exit: { opacity: 0, transition: { duration: 0.5 } },
 };
 
+// contact bar height: ~56px mobile, ~68px desktop
 export default function Hero() {
   const [current, setCurrent] = useState(0);
 
@@ -54,7 +55,7 @@ export default function Hero() {
   const next = () => setCurrent((p) => (p + 1) % slides.length);
 
   return (
-    <section className="relative h-[580px] sm:h-[700px] overflow-hidden">
+    <section className="relative h-[480px] sm:h-[700px] overflow-hidden">
       {/* SLIDES */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -71,10 +72,10 @@ export default function Hero() {
       {/* OVERLAY */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#060f1e]/90 via-[#060f1e]/70 to-transparent" />
 
-      {/* CONTENT */}
-      <div className="relative z-10 h-full flex flex-col justify-start pl-6 sm:pl-16 pr-6 sm:pr-10 pt-28 sm:pt-36 max-w-[780px]">
+      {/* CONTENT — pb accounts for contact bar so button is never covered */}
+      <div className="relative z-10 h-full flex flex-col justify-start pl-6 sm:pl-16 pr-6 sm:pr-10 pt-28 sm:pt-36 pb-16 sm:pb-20 max-w-[780px]">
         <AnimatePresence mode="wait">
-          <motion.div key={current} className="flex flex-col gap-4">
+          <motion.div key={current} className="flex flex-col gap-2 sm:gap-4">
             {/* TAG */}
             <motion.span
               custom={0}
@@ -82,7 +83,7 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="text-[#14aef5] text-sm font-semibold tracking-[3px] uppercase"
+              className="text-[#14aef5] text-[10px] sm:text-sm font-semibold tracking-[3px] uppercase"
             >
               {slides[current].tag}
             </motion.span>
@@ -94,7 +95,7 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="font-display text-white text-3xl sm:text-5xl xl:text-6xl font-bold leading-tight whitespace-pre-line"
+              className="font-display text-white text-2xl sm:text-5xl xl:text-6xl font-bold leading-tight whitespace-pre-line"
             >
               {slides[current].heading}{" "}
               <span className="text-[#14aef5]">{slides[current].highlight}</span>
@@ -107,7 +108,7 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="w-16 h-1 bg-[#14aef5] rounded"
+              className="w-10 sm:w-16 h-1 bg-[#14aef5] rounded"
             />
 
             {/* SUB */}
@@ -117,7 +118,7 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="text-white/75 text-sm sm:text-base leading-relaxed max-w-[520px]"
+              className="text-white/75 text-xs sm:text-base leading-relaxed max-w-[520px]"
             >
               {slides[current].sub}
             </motion.p>
@@ -131,30 +132,30 @@ export default function Hero() {
               exit="exit"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              className="mt-2 self-start bg-[#14aef5] hover:bg-[#0c9de0] transition-colors text-white rounded-lg px-8 py-4 flex items-center gap-2 font-semibold text-sm tracking-wide shadow-lg"
+              className="mt-1 sm:mt-2 self-start bg-[#14aef5] hover:bg-[#0c9de0] transition-colors text-white rounded-lg px-4 py-2 sm:px-8 sm:py-4 flex items-center gap-2 font-semibold text-xs sm:text-sm tracking-wide shadow-lg"
             >
-              LET'S TALK <ChevronRight size={18} />
+              LET'S TALK <ChevronRight size={14} className="sm:hidden" /><ChevronRight size={18} className="hidden sm:block" />
             </motion.button>
           </motion.div>
         </AnimatePresence>
       </div>
 
-      {/* ARROWS */}
+      {/* ARROWS — desktop only */}
       <button
         onClick={prev}
-        className="absolute left-5 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-[#14aef5] border border-white/20 text-white p-3 rounded-full transition-colors"
+        className="hidden sm:flex absolute left-5 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-[#14aef5] border border-white/20 text-white p-3 rounded-full transition-colors"
       >
         <ChevronLeft size={20} />
       </button>
       <button
         onClick={next}
-        className="absolute right-5 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-[#14aef5] border border-white/20 text-white p-3 rounded-full transition-colors"
+        className="hidden sm:flex absolute right-5 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-[#14aef5] border border-white/20 text-white p-3 rounded-full transition-colors"
       >
         <ChevronRight size={20} />
       </button>
 
       {/* DOTS */}
-      <div className="absolute bottom-24 left-0 right-0 z-20 flex justify-center gap-2">
+      <div className="absolute bottom-14 sm:bottom-20 left-0 right-0 z-20 flex justify-center gap-2">
         {slides.map((_, i) => (
           <button
             key={i}
@@ -167,23 +168,25 @@ export default function Hero() {
       </div>
 
       {/* CONTACT BAR */}
-      <div className="absolute bottom-0 left-0 w-full bg-white/95 backdrop-blur-sm py-4 px-6 flex flex-wrap gap-6 z-20">
-        <div className="flex items-center gap-3">
-          <div className="bg-[#14aef5] p-2.5 rounded-md text-white">
-            <Mail size={18} />
+      <div className="absolute bottom-0 left-0 w-full bg-white/95 backdrop-blur-sm py-2 sm:py-4 px-4 sm:px-10 flex flex-row items-center gap-4 sm:gap-10 z-20">
+        <div className="flex items-center gap-2">
+          <div className="bg-[#14aef5] p-1.5 sm:p-2.5 rounded-md text-white shrink-0">
+            <Mail size={13} className="sm:hidden" />
+            <Mail size={18} className="hidden sm:block" />
           </div>
           <div>
-            <p className="font-semibold text-sm text-[#222]">Mail</p>
-            <p className="text-xs text-[#666]">info@varengroup.org</p>
+            <p className="font-semibold text-xs sm:text-sm text-[#222]">Mail</p>
+            <p className="text-[10px] sm:text-xs text-[#666]">info@varengroup.org</p>
           </div>
         </div>
-        <div className="flex items-center gap-3">
-          <div className="bg-[#14aef5] p-2.5 rounded-md text-white">
-            <Phone size={18} />
+        <div className="flex items-center gap-2">
+          <div className="bg-[#14aef5] p-1.5 sm:p-2.5 rounded-md text-white shrink-0">
+            <Phone size={13} className="sm:hidden" />
+            <Phone size={18} className="hidden sm:block" />
           </div>
           <div>
-            <p className="font-semibold text-sm text-[#222]">Call Us</p>
-            <p className="text-xs text-[#666]">(818) 306-1995</p>
+            <p className="font-semibold text-xs sm:text-sm text-[#222]">Call Us</p>
+            <p className="text-[10px] sm:text-xs text-[#666]">(818) 306-1995</p>
           </div>
         </div>
       </div>

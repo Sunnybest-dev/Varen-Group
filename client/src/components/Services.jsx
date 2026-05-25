@@ -12,21 +12,6 @@ const services = [
   { title: "Labor Relations", icon: <Users size={28} />, desc: "We advise on organizing campaigns, negotiations, labor compliance and workforce communication." },
 ];
 
-const container = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } },
-};
-
-const card = {
-  hidden: { opacity: 0, y: 60, scale: 0.92 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-  },
-};
-
 const iconAnim = {
   hidden: { scale: 0, rotate: -30 },
   visible: { scale: 1, rotate: 0, transition: { type: "spring", stiffness: 260, damping: 18, delay: 0.15 } },
@@ -44,7 +29,7 @@ const textAnim = {
 
 export default function Services() {
   return (
-    <section className="py-24 px-6 bg-[#f5f6f8]">
+    <section className="py-14 sm:py-24 px-4 sm:px-6 bg-[#f5f6f8]">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -66,7 +51,7 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-display text-[#0e1623] text-4xl font-bold mt-2"
+          className="font-display text-[#0e1623] text-2xl sm:text-4xl font-bold mt-2"
         >
           Human Resources Services
         </motion.h2>
@@ -79,23 +64,19 @@ export default function Services() {
         />
       </motion.div>
 
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-40px" }}
-        className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 max-w-[1400px] mx-auto"
-      >
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 max-w-[1400px] mx-auto">
         {services.map((s, i) => (
           <motion.div
             key={i}
-            variants={card}
+            initial={{ opacity: 0, y: 60, scale: 0.92 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             whileHover={{
               y: -10,
               boxShadow: "0 20px 40px rgba(20,174,245,0.18)",
-              backgroundColor: "#fff",
             }}
-            className="bg-white rounded-xl py-10 px-7 text-center flex flex-col items-center cursor-default"
+            className="bg-white rounded-xl py-8 sm:py-10 px-5 sm:px-7 text-center flex flex-col items-center cursor-default"
           >
             {/* ICON */}
             <motion.div
@@ -129,7 +110,7 @@ export default function Services() {
             </motion.p>
           </motion.div>
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 }

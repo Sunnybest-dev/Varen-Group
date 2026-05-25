@@ -16,11 +16,7 @@ export default function Navbar() {
         className="absolute top-[42px] left-1/2 -translate-x-1/2 w-[92%] max-w-[1400px] bg-white rounded-xl px-4 sm:px-8 h-[60px] sm:h-[70px] flex items-center justify-between shadow-md z-50">
         {/* LOGO */}
         <div className="flex items-center gap-3">
-          <div className="flex flex-col gap-[3px]">
-            <div className="w-8 h-[5px] bg-gray-400 rounded" />
-            <div className="w-6 h-[5px] bg-gray-300 rounded" />
-            <div className="w-10 h-[5px] bg-green-500 rounded" />
-          </div>
+          <img src="/Varen-Group.png" alt="Varen Group" className="h-10 sm:h-12 w-auto object-contain" />
           <h1 className="text-xl sm:text-3xl font-bold text-[#1da1f2]">
             Varen <span className="text-[#3d4d5f]">Group</span>
           </h1>
@@ -95,9 +91,10 @@ export default function Navbar() {
             >
               {/* DRAWER HEADER */}
               <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100">
-                <h1 className="text-xl font-bold text-[#1da1f2]">
-                  Varen <span className="text-[#3d4d5f]">Group</span>
-                </h1>
+                <div className="flex items-center gap-2">
+                  <img src="/Varen-Group.png" alt="Varen Group" className="h-9 w-auto object-contain" />
+                  <h1 className="text-lg font-bold text-[#1da1f2]">Varen <span className="text-[#3d4d5f]">Group</span></h1>
+                </div>
                 <button onClick={() => setOpen(false)} className="text-[#555] hover:text-[#1da1f2] transition-colors">
                   <X size={22} />
                 </button>

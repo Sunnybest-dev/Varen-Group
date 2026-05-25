@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section className="bg-white py-24 px-6">
+    <section className="bg-white py-14 sm:py-24 px-4 sm:px-6">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -11,11 +11,11 @@ export default function About() {
         className="text-center mb-14"
       >
         <span className="text-[#14aef5] text-xs font-semibold tracking-[3px] uppercase">Who We Are</span>
-        <h2 className="font-display text-[#0e1623] text-4xl font-bold mt-2">About Us</h2>
+        <h2 className="font-display text-[#0e1623] text-2xl sm:text-4xl font-bold mt-2">About Us</h2>
         <div className="w-12 h-1 bg-[#14aef5] mx-auto mt-4 rounded" />
       </motion.div>
 
-      <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 items-center">
         {/* IMAGE */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -34,10 +34,10 @@ export default function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.5 }}
-            className="absolute -right-5 top-1/2 -translate-y-1/2 bg-[#14aef5] text-white w-[110px] h-[110px] rounded-2xl flex flex-col items-center justify-center shadow-xl z-10"
+            className="absolute right-3 sm:-right-5 top-1/2 -translate-y-1/2 bg-[#14aef5] text-white w-[80px] h-[80px] sm:w-[110px] sm:h-[110px] rounded-xl sm:rounded-2xl flex flex-col items-center justify-center shadow-xl z-10"
           >
-            <span className="text-3xl font-bold font-display">15+</span>
-            <span className="text-[10px] text-center leading-tight mt-1 font-medium px-2">Years of Experience</span>
+            <span className="text-2xl sm:text-3xl font-bold font-display">15+</span>
+            <span className="text-[9px] sm:text-[10px] text-center leading-tight mt-1 font-medium px-2">Years of Experience</span>
           </motion.div>
         </motion.div>
 
