@@ -6,7 +6,7 @@ export default function About() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         transition={{ duration: 0.6 }}
         className="text-center mb-14"
       >
@@ -20,7 +20,7 @@ export default function About() {
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="relative"
         >
@@ -32,7 +32,7 @@ export default function About() {
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ delay: 0.4, duration: 0.5 }}
             className="absolute right-3 sm:-right-5 top-1/2 -translate-y-1/2 bg-[#14aef5] text-white w-[80px] h-[80px] sm:w-[110px] sm:h-[110px] rounded-xl sm:rounded-2xl flex flex-col items-center justify-center shadow-xl z-10"
           >
@@ -45,7 +45,7 @@ export default function About() {
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="space-y-4 text-[#555] text-sm leading-relaxed"
         >

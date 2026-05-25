@@ -33,14 +33,14 @@ export default function Services() {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         transition={{ duration: 0.7 }}
         className="text-center mb-14"
       >
         <motion.span
           initial={{ opacity: 0, letterSpacing: "0.1em" }}
           whileInView={{ opacity: 1, letterSpacing: "0.2em" }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.6 }}
           className="text-[#14aef5] text-xs font-semibold tracking-[3px] uppercase"
         >
@@ -49,7 +49,7 @@ export default function Services() {
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.6, delay: 0.1 }}
           className="font-display text-[#0e1623] text-2xl sm:text-4xl font-bold mt-2"
         >
@@ -58,7 +58,7 @@ export default function Services() {
         <motion.div
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.5, delay: 0.3 }}
           className="w-12 h-1 bg-[#14aef5] mx-auto mt-4 rounded origin-center"
         />
@@ -70,7 +70,7 @@ export default function Services() {
             key={i}
             initial={{ opacity: 0, y: 60, scale: 0.92 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true, margin: "-40px" }}
+            viewport={{ once: false, margin: "-40px" }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             whileHover={{
               y: -10,

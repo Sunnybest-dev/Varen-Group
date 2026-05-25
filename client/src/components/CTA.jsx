@@ -6,7 +6,7 @@ export default function CTA() {
       <motion.div
         initial={{ opacity: 0, scale: 0.97 }}
         whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         transition={{ duration: 0.6 }}
         className="relative h-[220px] sm:h-[300px] max-w-[1450px] mx-auto overflow-hidden rounded-2xl"
         style={{
@@ -20,7 +20,7 @@ export default function CTA() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ delay: 0.2, duration: 0.6 }}
             className="font-display text-white text-2xl sm:text-4xl md:text-5xl font-bold"
           >
@@ -29,7 +29,7 @@ export default function CTA() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ delay: 0.35, duration: 0.6 }}
             className="text-white/70 text-xs sm:text-sm md:text-base mt-2 sm:mt-3 max-w-lg"
           >
@@ -38,7 +38,7 @@ export default function CTA() {
           <motion.button
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ delay: 0.5, duration: 0.5 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}

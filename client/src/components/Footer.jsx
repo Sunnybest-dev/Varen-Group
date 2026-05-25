@@ -23,13 +23,13 @@ export default function Footer() {
           variants={col}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           className="space-y-4"
         >
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.6 }}
             className="flex items-center gap-3"
           >
@@ -41,7 +41,7 @@ export default function Footer() {
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ delay: 0.3, duration: 0.6 }}
             className="text-sm text-gray-400 leading-relaxed max-w-[260px]"
           >
@@ -55,7 +55,7 @@ export default function Footer() {
           variants={col}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: false }}
         >
           <h3 className="text-base font-bold mb-6">Quick Links</h3>
           <ul className="space-y-3 text-sm text-gray-300">
@@ -64,7 +64,7 @@ export default function Footer() {
                 key={l}
                 initial={{ opacity: 0, x: -10 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ delay: 0.1 + i * 0.07, duration: 0.4 }}
                 whileHover={{ x: 4, color: "#14aef5" }}
                 className="cursor-pointer transition-colors hover:text-[#14aef5]"
@@ -81,7 +81,7 @@ export default function Footer() {
           variants={col}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: false }}
         >
           <h3 className="text-base font-bold mb-6">Contact Us</h3>
           <div className="space-y-5">
@@ -93,7 +93,7 @@ export default function Footer() {
                 key={label}
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ delay: 0.2 + i * 0.15, duration: 0.5 }}
                 className="flex items-start gap-3"
               >
@@ -117,7 +117,7 @@ export default function Footer() {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         transition={{ duration: 0.6 }}
         className="bg-[#14aef5] h-10 flex items-center justify-center text-white text-xs"
       >
